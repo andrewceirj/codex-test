@@ -11,15 +11,44 @@
 body {
     margin: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background: var(--bg);
+    background-image: url('assets/abstract-bg-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text);
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
+    position: relative;
 }
 
 body.dark {
-    background: var(--bg-dark);
+    background-color: var(--bg-dark);
     color: var(--text-dark);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: fadeInBg 1s forwards;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .topbar {
