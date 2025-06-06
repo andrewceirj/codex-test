@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dark mode toggle
-    const modeToggle = document.getElementById('modeToggle');
-    modeToggle.addEventListener('change', () => {
-        document.body.classList.toggle('dark', modeToggle.checked);
-    });
-
     // Language switch
     document.querySelectorAll('.lang-switch button').forEach(btn => {
         btn.addEventListener('click', () => {

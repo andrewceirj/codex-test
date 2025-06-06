@@ -1,22 +1,18 @@
 :root {
-    --accent: #ff7043;
-    --bg: #f4f4f4;
-    --text: #333;
-    --surface: #ffffff;
-    --bg-dark: #121212;
-    --text-dark: #eaeaea;
-    --surface-dark: #1f1f1f;
+    --accent: #ff7f50;
+    --text-light: #f2f2f2;
+    --heading: #ffffff;
 }
 
 body {
     margin: 0;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'IBM Plex Sans', 'Space Grotesk', sans-serif;
     background-image: url('assets/abstract-bg-qa.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: var(--text);
+    color: var(--text-light);
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
     position: relative;
@@ -24,10 +20,6 @@ body {
     animation: fadeInPage 1s forwards;
 }
 
-body.dark {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-}
 
 body::after {
     content: '';
@@ -48,6 +40,27 @@ body > * {
     z-index: 1;
 }
 
+h1, h2, h3 {
+    font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+    color: var(--heading);
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+.title {
+    font-size: 2.5em;
+    line-height: 1.2;
+    margin-bottom: 0.2em;
+}
+
+.subtitle {
+    font-weight: 300;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 0;
+    opacity: 0.8;
+}
+
 @keyframes fadeInBg {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -63,6 +76,9 @@ body > * {
     justify-content: space-between;
     align-items: center;
     padding: 0.5em 1em;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
 }
 
 .lang-switch button {
@@ -80,62 +96,23 @@ body > * {
     color: var(--accent);
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
-
-.switch input { display: none; }
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #ccc;
-    border-radius: 34px;
-    transition: background 0.2s;
-}
-
-.slider:before {
-    position: absolute;
-    content: '';
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.2s;
-}
-
-.switch input:checked + .slider {
-    background: var(--accent);
-}
-
-.switch input:checked + .slider:before {
-    transform: translateX(20px);
-}
 
 .hero {
     padding: 4em 1em;
     text-align: center;
-    background: linear-gradient(120deg, var(--accent), #ff9a7b);
-    color: white;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    color: var(--text-light);
 }
 
 .course {
     padding: 3em 1em;
-    background: var(--surface);
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
     text-align: center;
-}
-
-body.dark .course {
-    background: var(--surface-dark);
+    border-radius: 12px;
+    color: var(--text-light);
 }
 
 .course-list {
@@ -167,12 +144,13 @@ body.dark .course {
 .phone-body {
     width: 200px;
     height: 400px;
-    border: 8px solid #333;
+    border: 2px solid rgba(255,255,255,0.4);
     border-radius: 30px;
     margin: 0 auto;
-    background: #000;
+    background: rgba(0,0,0,0.6);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
 .phone-body .screen {
@@ -181,7 +159,7 @@ body.dark .course {
     left: 10px;
     right: 10px;
     bottom: 10px;
-    background: #fff;
+    background: rgba(255,255,255,0.1);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -202,12 +180,18 @@ body.dark .course {
 .ai-block {
     padding: 3em 1em;
     text-align: center;
-    background: linear-gradient(120deg, #ff9a7b, var(--accent));
-    color: white;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    color: var(--text-light);
 }
 
 .timeline {
     padding: 3em 1em;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    color: var(--text-light);
 }
 
 .timeline-list {
@@ -236,21 +220,16 @@ body.dark .course {
 
 .faq {
     padding: 3em 1em;
-    background: var(--surface);
-}
-
-body.dark .faq {
-    background: var(--surface-dark);
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    color: var(--text-light);
 }
 
 .faq-item {
     max-width: 600px;
     margin: 1em auto;
-    border-bottom: 1px solid #ddd;
-}
-
-body.dark .faq-item {
-    border-color: #444;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .faq-item .question {
@@ -275,6 +254,10 @@ body.dark .faq-item {
 
 .contact {
     padding: 3em 1em;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    color: var(--text-light);
 }
 
 form {
@@ -288,17 +271,13 @@ form input,
 form textarea {
     margin: 0.5em 0;
     padding: 0.8em;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 4px;
     font-size: 1em;
+    background: rgba(0,0,0,0.6);
+    color: var(--text-light);
 }
 
-body.dark form input,
-body.dark form textarea {
-    background: #333;
-    border-color: #555;
-    color: var(--text-dark);
-}
 
 form button {
     padding: 0.8em;
