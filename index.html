@@ -4,26 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI in Mobile Testing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hero">
-        <h1 class="title">AI in Mobile Testing</h1>
-        <p class="subtitle">Exploring the role of artificial intelligence in modern native app QA.</p>
-        <div class="phone">
-            <img src="phone.png" alt="Mobile Phone" />
+    <header class="topbar">
+        <div class="lang-switch">
+            <button data-lang="en" class="active">EN</button>
+            <button data-lang="ua">UA</button>
         </div>
-    </div>
-    <section class="content">
-        <h2>Enhancing QA with AI</h2>
-        <p>
-            Artificial intelligence helps automate repetitive tasks, identify edge cases, and predict user behavior.
-            By integrating AI, testers can focus on complex scenarios while machines handle the bulk of regression testing.
-        </p>
-        <p>
-            In mobile native applications, AI-driven testing frameworks can simulate diverse network conditions, hardware configurations,
-            and user interactions to reveal issues that might otherwise be missed.
-        </p>
+        <label class="switch">
+            <input type="checkbox" id="modeToggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <section class="hero hidden">
+        <h1 class="title" data-en="AI in Mobile Testing" data-ua="ШІ у мобільному тестуванні">AI in Mobile Testing</h1>
+        <p class="subtitle" data-en="Exploring the role of artificial intelligence in modern native app QA." data-ua="Вивчаємо роль штучного інтелекту в тестуванні мобільних застосунків.">Exploring the role of artificial intelligence in modern native app QA.</p>
+        <div class="phone">
+            <div class="phone-body">
+                <div class="screen">
+                    <div class="scan"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-block hidden">
+        <h2 data-en="Real-time AI Analysis" data-ua="Аналіз ШІ в реальному часі">Real-time AI Analysis</h2>
+        <p data-en="AI analyzes UI, UX and bug reports in real time." data-ua="ШІ аналізує UI, UX і баг-репорти в реальному часі.">AI analyzes UI, UX and bug reports in real time.</p>
+    </section>
+
+    <section class="timeline hidden">
+        <h2 data-en="AI-Powered QA Process" data-ua="AI-процес QA">AI-Powered QA Process</h2>
+        <ol class="timeline-list">
+            <li><span class="step" data-en="Collect data" data-ua="Збір даних">Collect data</span></li>
+            <li><span class="step" data-en="Train models" data-ua="Навчання моделей">Train models</span></li>
+            <li><span class="step" data-en="Execute tests" data-ua="Виконання тестів">Execute tests</span></li>
+            <li><span class="step" data-en="Report insights" data-ua="Звіт про інсайти">Report insights</span></li>
+        </ol>
+    </section>
+
+    <section class="faq hidden">
+        <h2 data-en="AI FAQ" data-ua="Часті питання про ШІ">AI FAQ</h2>
+        <div class="faq-item">
+            <button class="question" data-en="What is AI-based testing?" data-ua="Що таке тестування на основі ШІ?">What is AI-based testing?</button>
+            <div class="answer" data-en="It uses machine learning to enhance and automate QA." data-ua="Це використання машинного навчання для покращення та автоматизації QA.">It uses machine learning to enhance and automate QA.</div>
+        </div>
+        <div class="faq-item">
+            <button class="question" data-en="Does it replace testers?" data-ua="Чи заміняє це тестувальників?">Does it replace testers?</button>
+            <div class="answer" data-en="No, AI assists testers by handling routine checks." data-ua="Ні, ШІ допомагає тестувальникам, виконуючи рутинні перевірки.">No, AI assists testers by handling routine checks.</div>
+        </div>
+    </section>
+
+    <section class="contact hidden">
+        <h2 data-en="Request a Demo" data-ua="Запросити демо">Request a Demo</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <textarea id="message" placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <script src="script.js"></script>
