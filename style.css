@@ -11,7 +11,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background-image: url('assets/abstract-bg-1.png');
+    background-image: url('assets/abstract-bg-qa.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,6 +20,8 @@ body {
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
     position: relative;
+    opacity: 0;
+    animation: fadeInPage 1s forwards;
 }
 
 body.dark {
@@ -34,7 +36,7 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     pointer-events: none;
     z-index: 0;
     opacity: 0;
@@ -47,6 +49,11 @@ body > * {
 }
 
 @keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInPage {
     from { opacity: 0; }
     to { opacity: 1; }
 }
